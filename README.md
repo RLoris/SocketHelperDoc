@@ -36,6 +36,8 @@
 
 # TCP Client
 
+```A tcp client connects to a tcp server and exchanges data using the transfer control protocol (connectionful exchange)```
+
 ![tcp client nodes](./assets/node3hd.png)
 
     Note: Bind the events before calling "Open" to receive them properly
@@ -43,7 +45,6 @@
     If you leave empty "BindEndpoint" when calling Open, a random endpoint on your machine will be bound to establish the connection, you must provide a valid remote endpoint though
 
     Call "Close" to end the communication and free the memory when you are done
-
 
 | Node | Inputs | Outputs | Note |
 | ---- | ------ | ------- | ---- |
@@ -60,7 +61,15 @@
 | BindEventToOnTextMessage | void | Message(String) | Triggered when a text message is received from remote |
 | BindEventToOnByteMessage | void | Message(Array(Byte)) | Triggered when a bytes message is received from remote |
 
+## Example usage : Tcp client
+
+![Example tcp client](./assets/tcpclient.png)
+
+<br>
+
 # TCP Server
+
+```A tcp server listens for incoming connections from tcp clients and communicates with them using the transfer control protocol (connectionful exchange)```
 
 ![utility nodes](./assets/node5hd.png)
 
@@ -94,7 +103,15 @@
 | BindEventToOnTextMessage | void | Message(String), SenderIp(String) | Triggered when a new text message is received from a client |
 | BindEventToOnByteMessage | void | Message(Array(Byte)), SenderIp(String) | Triggered when a new byte message is received from a client |
 
+## Example usage : Tcp server
+
+![Example tcp server](./assets/tcpserver.png)
+
+<br>
+
 # UDP Socket
+
+```A udp peer listens for incoming messages from other udp peers and communicates with them using the user datagram protocol (connectionless exchange)```
 
 ![utility nodes](./assets/node4hd.png)
 
@@ -115,6 +132,12 @@
 | BindEventToOnError | void | Code(Int), Reason(String), Error(ESocketError) | Triggered when an error occurs, reason contains additional information |
 | BindEventToOnTextMessage | void | Message(String), SenderIp(String) | Triggered when a new text message is received from a peer |
 | BindEventToOnByteMessage | void | Message(Array(Byte)), SenderIp(String) | Triggered when a new byte message is received from a peer |
+
+## Example usage : Udp peer
+
+![Example udp peer](./assets/udppeer.png)
+
+<br>
 
 # Async nodes
 
